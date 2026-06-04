@@ -13,6 +13,13 @@ dependencies {
     implementation(libs.kotlinx.coroutinesSwing)
 
     implementation(libs.compose.uiToolingPreview)
+
+    // Koin
+    implementation("io.insert-koin:koin-core:4.0.0")
+
+    implementation("com.russhwolf:multiplatform-settings-no-arg:1.1.1")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.8.0")
 }
 
 compose.desktop {

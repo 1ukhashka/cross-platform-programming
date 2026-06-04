@@ -1,9 +1,8 @@
 package com.example.block_2
 
 import com.russhwolf.settings.Settings
-import kotlinx.datetime.Clock
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class PlatformRepository(private val settings: Settings) {
 
@@ -22,9 +21,8 @@ class PlatformRepository(private val settings: Settings) {
     fun getOpenCount(): Int = settings.getInt(KEY_OPEN_COUNT, 0)
 
     fun updateLastOpened() {
-        val now = Clock.System.now()
-            .toLocalDateTime(TimeZone.currentSystemDefault())
-        val formatted = "${now.date} ${now.hour.toString().padStart(2, '0')}:${now.minute.toString().padStart(2, '0')}"
+        val now = LocalDateTime.now()
+        val formatted = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
         settings.putString(KEY_LAST_OPENED, formatted)
     }
 

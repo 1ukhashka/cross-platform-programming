@@ -50,10 +50,12 @@ kotlin {
             implementation("io.insert-koin:koin-compose:4.0.0")
             implementation("io.insert-koin:koin-compose-viewmodel:4.0.0")
             // Multiplatform Settings
+
+
             implementation("com.russhwolf:multiplatform-settings:1.1.1")
             implementation("com.russhwolf:multiplatform-settings-no-arg:1.1.1")
 
-            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0")
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.8.0")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
